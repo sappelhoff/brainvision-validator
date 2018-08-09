@@ -1,7 +1,7 @@
 {
-  "name": "brainvision-reader",
+  "name": "brainvision-validator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Check brainvision eeg file triplets for validity.",
   "main": "index.js",
   "scripts": {
     "test": "nyc mocha --reporter spec",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sappelhoff/brainvision-reader.git"
+    "url": "git+https://github.com/sappelhoff/brainvision-validator.git"
   },
-  "keywords": [],
+  "keywords": ["brainvision", "eeg", "neuroscience", "brain products"],
   "author": "Stefan Appelhoff <stefan.appelhoff@mailbox.org> (http://www.stefanappelhoff.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sappelhoff/brainvision-reader/issues"
+    "url": "https://github.com/sappelhoff/brainvision-validator/issues"
   },
-  "homepage": "https://github.com/sappelhoff/brainvision-reader#readme",
+  "homepage": "https://github.com/sappelhoff/brainvision-validator#readme",
   "devDependencies": {
     "chai": "^4.1.2",
     "codecov": "^3.0.4",

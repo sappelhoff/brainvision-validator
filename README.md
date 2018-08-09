@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/sappelhoff/brainvision-reader.svg?branch=master)](https://travis-ci.org/sappelhoff/brainvision-reader)
-[![codecov](https://codecov.io/gh/sappelhoff/brainvision-reader/branch/master/graph/badge.svg)](https://codecov.io/gh/sappelhoff/brainvision-reader)
+[![Build Status](https://travis-ci.org/sappelhoff/brainvision-validator.svg?branch=master)](https://travis-ci.org/sappelhoff/brainvision-validator)
+[![codecov](https://codecov.io/gh/sappelhoff/brainvision-validator/branch/master/graph/badge.svg)](https://codecov.io/gh/sappelhoff/brainvision-validator)
 
-# brainvision-reader
+# brainvision-validator
 
-Work in progress. This might become a reader / validator for electroencephalography
+Work in progress. This might become a validator for electroencephalography
 data files in the BrainVision format by Brain Products.
 
 # Usage
@@ -12,12 +12,12 @@ data files in the BrainVision format by Brain Products.
 2. `npm install`
 3. `npm link`
 4. go anywhere you want to use it ...
-5. from there do: `npm link brainvision-reader`
+5. from there do: `npm link brainvision-validator`
 
 and from there, it's
 
 ```node
-var bv = require('brainvision-reader');
+var bv = require('brainvision-validator');
 
 var vhdrPath = 'some/path/to/a/brainvision/file';
 
