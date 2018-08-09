@@ -3,8 +3,6 @@ var path = require("path");
 
 module.exports = {
 
-    vhdrPath: "./data/test.vhdr",
-
     assertBVTriplet: function(vhdrPath) {
         // read the contents of the vhdr file
         var vhdrContent = fs.readFileSync(vhdrPath, 'utf8');
