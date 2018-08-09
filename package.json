@@ -1,0 +1,24 @@
+{
+  "name": "brainvision-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sappelhoff/brainvision-reader.git"
+  },
+  "keywords": [],
+  "author": "Stefan Appelhoff <stefan.appelhoff@mailbox.org> (http://www.stefanappelhoff.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sappelhoff/brainvision-reader/issues"
+  },
+  "homepage": "https://github.com/sappelhoff/brainvision-reader#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}
