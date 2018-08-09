@@ -1,10 +1,11 @@
 var expect = require("chai").expect;
-var my_main_fun = require("../index.js");
+var path = require("path");
+var validator = require("../validator.js");
 
-describe("Simple Main Dummy", function(){
-    it("will just return 1.", function() {
-        var res = my_main_fun();
-
-        expect(res).to.equal(1);
+describe("Assert BrainVision Triplet", function(){
+    it("will return true.", function() {
+        var vhdrPath = path.join(__dirname, 'data/test.vhdr');
+        var foundTriplet = validator.assertBVTriplet(vhdrPath);
+        expect(foundTriplet).to.equal(true);
     });
 });
