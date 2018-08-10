@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+process.title = 'brainvision-validator';
+
+var argv = require('yargs')
+    .usage('Usage: $0 <BrainVision header file (.vhdr)> [options]')
+    .help('help')
+    .alias('help', 'h')
+    .version(require('../package.json').version)
+    .alias('version', 'v')
+    .demandCommand(1, 1)
+    .epilogue("This tool validates BrainVision EEG file triplets. \
+To learn more, visit https://github.com/sappelhoff/brainvision-validator")
+    .argv;
+
+// import and init command line interface
+require('../cli.js')(argv._[0], argv);

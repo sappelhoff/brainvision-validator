@@ -1,3 +1,4 @@
+// All functions to validate a BrainVision file triplet
 var fs = require("fs");
 var path = require("path");
 
