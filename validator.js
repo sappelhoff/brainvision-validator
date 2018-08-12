@@ -4,6 +4,23 @@ var path = require("path");
 
 module.exports = {
 
+
+    /**
+     * assertIsVHDR - Assert that the file has a .vhdr extension.    
+     *
+     * @param  {string} vhdrPath path to the file to be tested
+     * @return {boolean}
+     */
+    assertIsVHDR: function(vhdrPath){
+        // check if the extension is vhdr. Return true/false
+        ext = path.extname(vhdrPath);
+        console.log(ext);
+        if (ext != '.vhdr') {
+            return false;
+        }
+        return true;
+    },
+
     assertBVTriplet: function(vhdrPath) {
         // read the contents of the vhdr file
         var vhdrContent = fs.readFileSync(vhdrPath, 'utf8');
