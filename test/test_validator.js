@@ -2,7 +2,7 @@ var expect = require("chai").expect;
 var path = require("path");
 var validator = require("../validator.js");
 
-describe("File extensions", function(){
+describe("assertIsVHDR", function(){
 
     it("detects wrong file extensions.", function() {
         var vhdrPath = path.join(__dirname, 'data/test.wrong');
@@ -17,7 +17,7 @@ describe("File extensions", function(){
     });
 });
 
-describe("File triplet links", function(){
+describe("assertBVTriplet", function(){
 
     it("detects correct links.", function() {
         var vhdrPath = path.join(__dirname, 'data/test.vhdr');
