@@ -53,11 +53,12 @@ or check the help using the help option: `brainvision-validator -h`
 #### In a script
 
 ```js
-var bvv = require('brainvision-validator');
+var validateBrainVision = require('brainvision-validator').validateBrainVision;
 
 var vhdrPath = 'some/path/to/a/brainvision/headerfile.vhdr';
 
-bvv.assertBVTriplet(vhdrPath)
+// get an array of issues ... issues.length==0 if there were none.
+var issues = validateBrainVision(vhdrPath)
 
 ```
 
