@@ -8,6 +8,8 @@ var argv = require('yargs')
     .alias('help', 'h')
     .version(require('../package.json').version)
     .alias('version', 'v')
+    .boolean('verbose')
+    .describe('verbose', 'Print the issues, if validation failed')
     .demandCommand(1, 1)
     .epilogue("This tool validates BrainVision EEG file triplets. \
 To learn more, visit https://github.com/sappelhoff/brainvision-validator")
