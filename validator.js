@@ -4,23 +4,30 @@ var path = require("path");
 
 module.exports = {
 
-
     /**
-     * assertIsVHDR - Assert that the file has a .vhdr extension.    
+     * assertIsVHDR - Assert that the file has a .vhdr extension.
      *
      * @param  {string} vhdrPath path to the file to be tested
      * @return {boolean}
      */
     assertIsVHDR: function(vhdrPath){
-        // check if the extension is vhdr. Return true/false
         ext = path.extname(vhdrPath);
-        console.log(ext);
         if (ext != '.vhdr') {
             return false;
         }
         return true;
     },
 
+
+    /**
+     * assertBVTriplet - Asssert that internal links in the file triplet work
+     *
+     * .vhdr contains links to .eeg and .vmrk; and .vmrk also contains a
+     * link to .eeg
+     *
+     * @param  {type} vhdrPath path to the file to be tested
+     * @return {boolean}
+     */
     assertBVTriplet: function(vhdrPath) {
         // read the contents of the vhdr file
         var vhdrContent = fs.readFileSync(vhdrPath, 'utf8');
@@ -37,17 +44,18 @@ module.exports = {
         var eegPath = path.join(basePath, eegBaseName);
         var vmrkPath = path.join(basePath, vmrkBaseName);
 
-        // check that they exists
-        var allGood =  fs.existsSync(eegPath) && fs.existsSync(vmrkPath);
-        if (!allGood) {throw new Error('File triplet pointers are broken.');}
+        // check that marker file exists and try to find its link to datafile
+        var dataFileLinksGood = false;
+        if (fs.existsSync(vmrkPath)) {
+            var vmrkContent = fs.readFileSync(vmrkPath, 'utf8');
+            dataFileLinksGood = eegBaseName == vmrkContent.match(eegRe)[1];
+        }
 
-        // finally, check that marker file points to correct data file
-        var vmrkContent = fs.readFileSync(vmrkPath, 'utf8');
-
-        if (eegBaseName == vmrkContent.match(eegRe)[1]) {
-            return allGood;
+        // data file has to exist and be consistently linked to
+        if (fs.existsSync(eegPath) && dataFileLinksGood) {
+            return true;
         } else {
-            throw new Error ('File triplets are present but link to data from .vmrk is broken.');
+            return false;
         }
     }
 };
