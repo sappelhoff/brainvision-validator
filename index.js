@@ -23,7 +23,7 @@ module.exports = {
 
         // Are the internal links functional
         var linksAreGood = validator.assertBVTriplet(vhdrPath);
-        if (!linksAreGood) {issues.push('Internal links are broken. Check DataFile and MarkerFile fields in .vhdr and .vmrk ');}
+        if (!linksAreGood) {issues.push('Internal links are broken or files (.eeg, .vhdr, .vmrk). Check DataFile and MarkerFile fields in .vhdr and .vmrk ');}
 
         return issues;
     }
