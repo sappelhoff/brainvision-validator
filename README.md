@@ -43,14 +43,16 @@ pointers are functional.
 
 # Usage
 
+#### In the command line
 `npm install -g brainvision-validator`
 
-#### In the command line
 `brainvision-validator some/path/to/a/brainvision/headerfile.vhdr`
 
 or check the help using the help option: `brainvision-validator -h`
 
 #### In a script
+`npm install brainvision-validator`
+
 
 ```js
 var validateBrainVision = require('brainvision-validator').validateBrainVision;
