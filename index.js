@@ -26,6 +26,8 @@ module.exports = {
         var linkCheck = validator.assertBVTriplet(vhdrPath);
         if (linkCheck) {issues.push(issue_dict[linkCheck]);}
 
+        // return only unique issues
+        issues = Array.from(new Set(issues));
         return issues;
     }
 };
