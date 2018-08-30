@@ -8,14 +8,14 @@ module.exports = {
      * assertIsVHDR - Assert that the file has a .vhdr extension.
      *
      * @param  {string} vhdrPath path to the file to be tested
-     * @return {boolean}
+     * @return {(number|null)} the issue key or null, if no issue
      */
     assertIsVHDR: function(vhdrPath){
         ext = path.extname(vhdrPath);
         if (ext != '.vhdr') {
-            return false;
+            return 1;
         }
-        return true;
+        return null;
     },
 
 
@@ -26,7 +26,7 @@ module.exports = {
      * link to .eeg
      *
      * @param  {type} vhdrPath path to the file to be tested
-     * @return {boolean}
+     * @return {(number|null)} the issue key or null, if no issue
      */
     assertBVTriplet: function(vhdrPath) {
         // read the contents of the vhdr file
@@ -53,9 +53,9 @@ module.exports = {
 
         // data file has to exist and be consistently linked to
         if (fs.existsSync(eegPath) && dataFileLinksGood) {
-            return true;
+            return null;
         } else {
-            return false;
+            return 2;
         }
     }
 };

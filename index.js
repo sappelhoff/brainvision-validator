@@ -1,4 +1,5 @@
 var validator = require("./validator.js");
+var issue_dict = require("./issue_dict.js");
 
 // Export the BrainVision validation function: validateBrainVision
 module.exports = {
@@ -18,12 +19,12 @@ module.exports = {
         var issues = [];
 
         // Does it have the proper extension
-        var isVHDR = validator.assertIsVHDR(vhdrPath);
-        if (!isVHDR) {issues.push('Wrong file extension. Header file should end with .vhdr');}
+        var vhdrCheck = validator.assertIsVHDR(vhdrPath);
+        if (vhdrCheck) {issues.push(issue_dict[vhdrCheck]);}
 
         // Are the internal links functional
-        var linksAreGood = validator.assertBVTriplet(vhdrPath);
-        if (!linksAreGood) {issues.push('Internal links are broken or files (.eeg, .vhdr, .vmrk). Check DataFile and MarkerFile fields in .vhdr and .vmrk ');}
+        var linkCheck = validator.assertBVTriplet(vhdrPath);
+        if (linkCheck) {issues.push(issue_dict[linkCheck]);}
 
         return issues;
     }
