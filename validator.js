@@ -29,6 +29,11 @@ module.exports = {
      * @return {(number|null)} the issue key or null, if no issue
      */
     get_issues_BVTriplet: function(vhdrPath) {
+        // Check that we are working with a vhdr file
+        // Return early, if this is not a vhdr
+        var vhdrIssue = this.get_issues_IsVHDR(vhdrPath);
+        if (vhdrIssue) {return vhdrIssue;}
+
         // read the contents of the vhdr file
         var vhdrContent = fs.readFileSync(vhdrPath, 'utf8');
 

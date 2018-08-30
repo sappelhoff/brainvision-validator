@@ -19,6 +19,12 @@ describe("get_issues_IsVHDR", function(){
 
 describe("get_issues_BVTriplet", function(){
 
+    it("returns early if an incorrect file is being checked,", function() {
+        var vhdrPath = path.join(__dirname, 'data/test.vmrk'); // note the extension
+        var linkIssue = validator.get_issues_BVTriplet(vhdrPath);
+        expect(linkIssue).to.equal(1);
+    });
+
     it("detects correct links.", function() {
         var vhdrPath = path.join(__dirname, 'data/test.vhdr');
         var linkIssue = validator.get_issues_BVTriplet(vhdrPath);
