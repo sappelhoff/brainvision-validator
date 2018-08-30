@@ -1,6 +1,6 @@
 {
   "name": "brainvision-validator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Check BrainVision EEG file triplets for validity.",
   "main": "index.js",
   "scripts": {
