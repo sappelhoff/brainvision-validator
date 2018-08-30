@@ -19,12 +19,12 @@ module.exports = {
         var issues = [];
 
         // Does it have the proper extension
-        var vhdrCheck = validator.assertIsVHDR(vhdrPath);
-        if (vhdrCheck) {issues.push(issue_dict[vhdrCheck]);}
+        var vhdrIssue = validator.get_issues_IsVHDR(vhdrPath);
+        if (vhdrIssue) {issues.push(issue_dict[vhdrIssue]);}
 
         // Are the internal links functional
-        var linkCheck = validator.assertBVTriplet(vhdrPath);
-        if (linkCheck) {issues.push(issue_dict[linkCheck]);}
+        var linkIssue = validator.get_issues_BVTriplet(vhdrPath);
+        if (linkIssue) {issues.push(issue_dict[linkIssue]);}
 
         // return only unique issues
         issues = Array.from(new Set(issues));

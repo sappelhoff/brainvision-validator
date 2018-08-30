@@ -5,12 +5,12 @@ var path = require("path");
 module.exports = {
 
     /**
-     * assertIsVHDR - Assert that the file has a .vhdr extension.
+     * get_issues_IsVHDR - Check that the file has a .vhdr extension.
      *
      * @param  {string} vhdrPath path to the file to be tested
      * @return {(number|null)} the issue key or null, if no issue
      */
-    assertIsVHDR: function(vhdrPath){
+    get_issues_IsVHDR: function(vhdrPath){
         ext = path.extname(vhdrPath);
         if (ext != '.vhdr') {
             return 1;
@@ -20,7 +20,7 @@ module.exports = {
 
 
     /**
-     * assertBVTriplet - Asssert that internal links in the file triplet work
+     * get_issues_BVTriplet - Check that internal links in the file triplet work
      *
      * .vhdr contains links to .eeg and .vmrk; and .vmrk also contains a
      * link to .eeg
@@ -28,7 +28,7 @@ module.exports = {
      * @param  {type} vhdrPath path to the file to be tested
      * @return {(number|null)} the issue key or null, if no issue
      */
-    assertBVTriplet: function(vhdrPath) {
+    get_issues_BVTriplet: function(vhdrPath) {
         // read the contents of the vhdr file
         var vhdrContent = fs.readFileSync(vhdrPath, 'utf8');
 
