@@ -26,7 +26,7 @@ consisting of:
 - key-value pairs marked as `key=value`
 
 A documentation for core BrainVision file format is provided by Brain Products.
-You can view the specification [here](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/sappelhoff/brainvision-validator/master/doc/BrainVisionCoreFileFormat_1.0_2018-08-02.pdf).
+You can [view the specification here](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/sappelhoff/brainvision-validator/master/doc/BrainVisionCoreFileFormat.pdf).
 
 Having three separate files for each EEG recording means that the single files
 have internal pointers to each other's locations. See this example:
