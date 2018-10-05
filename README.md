@@ -4,7 +4,7 @@
 
 # BrainVision-Validator
 
-TL;DR: This npm module allows for validation of BrainVision EEG files.
+> TL;DR: This npm module allows for validation of BrainVision EEG files.
 
 BrainVision is the name of a file format commonly used for storing
 electroencephalography (EEG) data. Originally, it was put forward by the
@@ -23,6 +23,9 @@ consisting of:
 - sections marked as `[square brackets]`
 - comments marked as `; comment`
 - key-value pairs marked as `key=value`
+
+A documentation for core BrainVision file format is provided by Brain Products.
+You can view the specification [here](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/sappelhoff/brainvision-validator/master/doc/BrainVisionCoreFileFormat_1.0_2018-08-02.pdf).
 
 Having three separate files for each EEG recording means that the single files
 have internal pointers to each other's locations. See this example:
@@ -66,4 +69,4 @@ var issues = validateBrainVision(vhdrPath)
 
 # Tests
 
-Run `npm test` from the project root.
+Run `npm install` and then `npm test` from the project root.
