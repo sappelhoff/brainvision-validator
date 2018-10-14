@@ -3,7 +3,7 @@ Brain Vision Data Exchange Header File Version 1.0
 
 [Common Infos]
 DataFile=test.eeg
-MarkerFile=test_broken_link.vmrk
+MarkerFile=broken_link.vmrk
 DataFormat=BINARY
 Data orientation=MULTIPLEXED
 DataOrientation=MULTIPLEXED

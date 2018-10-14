@@ -16,16 +16,12 @@ module.exports = {
         // make sure we are working on a header file
         ext = path.extname(vhdrPath);
         if (ext != '.vhdr') {
-            throw new Error (vsprintf('Expected file with extension ".vhdr" ' +
-                                      'file but got "%s"', [ext]));
+            throw new Error (vsprintf("Expected file with extension '.vhdr' " +
+                                      "file but got '%s'", [ext]));
         }
 
         // read the contents of the vhdr file
-        try {
-            var vhdrContent = fs.readFileSync(vhdrPath, 'utf8');
-        } catch (err) {
-            throw new Error (vsprintf("Couldn't read header: %s", [vhdrPath]))
-        }
+        var vhdrContent = fs.readFileSync(vhdrPath, 'utf8');
 
         // find the links to the data and marker files
         var basePath = path.resolve(path.dirname(vhdrPath));
