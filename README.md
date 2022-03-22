@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/sappelhoff/brainvision-validator.svg?branch=master)](https://travis-ci.org/sappelhoff/brainvision-validator)
+[![Node Tests](https://github.com/sappelhoff/brainvision-validator/actions/workflows/node_tests.yml/badge.svg)](https://github.com/sappelhoff/brainvision-validator/actions/workflows/node_tests.yml)
 [![codecov](https://codecov.io/gh/sappelhoff/brainvision-validator/branch/master/graph/badge.svg)](https://codecov.io/gh/sappelhoff/brainvision-validator)
 [![npm version](https://badge.fury.io/js/brainvision-validator.svg)](https://badge.fury.io/js/brainvision-validator)
 [![DOI](https://zenodo.org/badge/144147242.svg)](https://zenodo.org/badge/latestdoi/144147242)

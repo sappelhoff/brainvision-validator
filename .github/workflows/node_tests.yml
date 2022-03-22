@@ -1,0 +1,32 @@
+name: Node Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+        node: [14]
+
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          cache: "npm"
+      - name: Set up Node
+        run: |
+          npm install -g npm@^7
+          npm install
+      - name: run tests
+        run: npm run test
+      - name: Upload to codecov
+        run: npm run report-coverage
